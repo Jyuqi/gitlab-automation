@@ -1,0 +1,49 @@
+# Configuration File for CIBR-FLARE Project
+
+## General Settings
+git:
+  remote:
+    server: http://localhost
+    branch: master
+    ssh-key-private: '/home/osboxes/.ssh/id_rsa.pub'
+    user-name: root
+    user-email: 
+    private-token: 'W7jzD6_FwKj5vhVKF3Ku'  # generated from create_personal_token, saved in file "token"
+
+## Container Settings
+flare-qa-qc:
+  site:
+    name: fcre
+    scripts:
+      git:
+        remote:
+        - server: github.com
+          repository: CareyLabVT/FLARE
+          branch: master
+          directory: Rscripts/fcre
+    data:
+      git:
+        remote:
+        - server: github.com
+          repository: CareyLabVT/SCCData
+          branch: carina-data
+          directory:
+        - server: github.com
+          repository: CareyLabVT/SCCData
+          branch: mia-data
+          directory:
+        - server: github.com
+          repository: CareyLabVT/SCCData
+          branch: diana-data
+          directory:
+        - server: github.com
+          repository: CareyLabVT/SCCData
+          branch: manual-data
+          directory:
+        - server: github.com
+          repository: CareyLabVT/noaa_gefs_forecasts
+          branch: fcre
+          directory:
+      manual-download:
+      - url: https://portal.edirepository.org/nis/dataviewer?packageid=edi.389.4&entityid=c1db8816742823eba86696b29f106d0f
+        file-name: Met_final_2015_2019.csv
